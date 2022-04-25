@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "contosovideo-dcb4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "contosovideo-dcb4"
+  template:
+    metadata:
+      labels:
+        app: "contosovideo-dcb4"
+    spec:
+      containers:
+        - name: "contosovideo-dcb4"
+          image: "contosocontainerregistry4917.azurecr.io/contosovideo"
+          ports:
+          - containerPort: 80
