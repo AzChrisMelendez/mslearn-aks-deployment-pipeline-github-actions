@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "contosovideo-dcb4"
+    labels:
+        app: "contosovideo-dcb4"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: contoso-video_azchris-contosovideo-dcb4.b4d50a66149d45d281d1.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "contosovideo-dcb4"
+                servicePort: 80
